@@ -1,0 +1,258 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {                    /* como adicinar regra de fonte baixada em documento css */
+    font-family: 'Android';
+    src: url('C:/Users/User/Desktop/estudos/html-css/exercicios/modulo 2/projeto modulo 2/projeto1/desafio10/fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+
+}
+
+@keyframes pulsate { /* puxando uma sombra de uma kayframe de pulsar para estilização do menu 'nav' */
+    0%{
+        box-shadow: 
+        0 0 25px black,
+        0 0 25px white;
+    }
+}
+
+:root {
+    --verde-escuro: #151F18; 
+    --verde-cinza: #24492F;
+    --verde-analogo: #35d679; /*#20BA4B */
+    --verde: #01E642;
+    --verde-claro: #43CC6A; 
+    --verde-fundo: #89A591; 
+    --azul: #124559;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: "Bebas Neue", sans-serif;
+    --fonte-android: 'Android','cursive';
+        
+      
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: var(--verde-fundo);
+    font-family: var(--fonte-padrao);
+}
+
+a.externo::after {
+    content: '\00a0\1F517';
+}
+
+a.inicial {
+    background-color: var(--verde-fundo);
+    color: var(--verde-cinza);
+    border-radius: 1px;
+}
+
+a.inicial:hover {
+    color: white;
+    text-decoration: none;
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--verde-cinza), var(--verde-escuro)); /* debrade de duas cores de cima pra baixo */ 
+    min-height: 150px; /* altura minima  */
+    text-align: center;
+    padding-top: 40px; /* padding da borda pra dentro */
+}
+
+header > h1 {
+    color: whitesmoke;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    margin-bottom: 25px; /* margin distancia do h1 pro p */
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.500);
+    font-weight: normal;
+}
+
+header > p {
+    color: whitesmoke;
+    font-weight: normal;
+    font-size: 1.1em;
+    font-family: var(--fonte-padrao);
+    max-width: 510x; /* */
+    margin: auto; /* centralizar */
+    padding-right: 10px; /* borda pra dentro do p pro lado direito */
+    padding-left: 10px; /* borda pra dentro do p pro lado esquerdo */
+    text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.322); /*  sombras */
+    margin-bottom: 30px;
+
+}
+
+nav {
+    background-color: var(--verde-escuro);
+    padding: 5px 0px; 
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.400);
+    display: flex;
+    width: 100%;
+    position: sticky; /* fixar a posição do nav */
+    top: 0;
+    z-index: 1; /* usado para que o nosso nav sobreponha as divs */
+
+}
+
+nav > a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    border-radius: 3px; /* borda dos links */
+    transition-duration: .35s; /* duração para a transição */
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+
+
+}
+
+nav > a:hover { /* configura os links 'a' quando passar o mouse emcima 'hover'*/
+    background-color: var(--verde-cinza);
+    color: var(--verde-escuro);
+    padding: 10px 50px;
+    transition: 0.4s; /*  esse aqui que é o pulo do gato, que pode ser utilizado em outras situações  */
+    animation: pulsate 0.5s ease-in-out; /* animação do kayframe pulsate */
+    
+}
+
+main {
+    background-color: white;
+    min-width: 400px;
+    max-width: 1000px;
+    margin: auto; /* centralizar */
+    margin-bottom: 25px;
+    padding: 20px; /* distancia em que tudo fica da borda do main */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.253); /* criando borda lateral do main */
+    border-bottom-left-radius: 10px; /* configurando a borda da esqueda debaixo  */
+    border-bottom-right-radius: 10px; /* configurando a borda da direita debaixo  */
+}
+
+main h1 {
+    color: var(--verde);
+    font-family: var(--fonte-android);
+    text-indent: 5px;
+    font-size: 2em;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.747);
+    font-weight: normal;
+}
+
+main h2 {
+    color: var(--verde-cinza);
+    font-family: var(--fonte-android);
+    text-indent: 5px;
+    font-size: 1.8em;
+    background-image: linear-gradient(to right, var(--verde-claro), transparent);                                 /* deixar a caixa do h1 com  degrade ate o transparente */
+    text-indent: 35px;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.658);
+    font-weight: normal;
+}
+
+main p {
+    margin: 15px 0px; 
+    text-align: justify;
+    text-indent: 35px;
+    font-size: 1em;
+    line-height: 1.5em; /* essa propriedade significa que entre as linhas do 'p' que estamos configurando, espaçamento entre linhas*/ 
+}
+
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--verde-cinza);
+    background-color: var(--verde-claro);
+    padding: 2px 3px;
+}
+
+main a:hover {
+    color: var(--verde-escuro);
+    text-decoration: underline;
+}
+
+main strong {
+    color: var(--verde-cinza);
+    font-weight: bold;
+    padding: 2px 3px;
+}
+
+main img {
+    width: 100%;
+}
+
+main img.pequena {
+    max-width: 350px;
+    display: block; /* picture img vem como padrao inblock */
+    margin: auto; 
+}
+
+div.video {
+    background-color: var(--verde-cinza);
+    margin: 30px -20px 30px -20px;
+    padding: 20px;
+    padding-top: 0px;
+    padding-bottom: 58.6%; /* varia de video para video */
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.404);
+
+    position: relative; /* obrigatorio */
+}
+
+div.video > iframe {
+    position: absolute; /* obrigatorio */
+    top: 5%; /* espaçamento do video ate o topo da div */
+    left: 5%; /* espaçamento da direita da div ate o video */
+    width: 90%; /* - de 100% para ficar com a borda atras */
+    height: 90%;
+}
+
+aside {
+    background-color: var(--verde-fundo);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.404);
+}
+
+aside > h3 {
+    color: white;
+    background-color: var(--verde-cinza);
+    padding: 10px;
+    margin: -10px -10px 0px -10px; /* usamos margem negativa para colar o h3 no corpo do aside */
+    border-radius: 10px 10px 0px 0px; /* bordar onduladas somente emcima e embaixo */
+
+
+}
+
+aside > ul {
+    list-style-type: '\2714\00a0\00a0'; /* adiciona aos links uma emoji do emojipedia, porem devemos declarar em aspas e com um contrabarra \ */
+    list-style-position: inside; /* coloca as bolinhas da lista pra dentro do aside */
+    columns: 2; /* divide em colunas */
+    text-align: left;
+    text-indent: 35px;
+}
+
+footer {
+    background-color: var(--verde-escuro);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--verde-cinza);
+}
