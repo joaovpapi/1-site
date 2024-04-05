@@ -90,7 +90,7 @@ header > p {
 
 nav {
     background-color: var(--verde-escuro);
-    padding: 5px 0px; 
+    padding: 0px 0px; 
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.400);
     display: flex;
     width: 100%;
