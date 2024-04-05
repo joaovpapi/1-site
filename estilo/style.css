@@ -84,7 +84,7 @@ header > p {
     padding-right: 10px; /* borda pra dentro do p pro lado direito */
     padding-left: 10px; /* borda pra dentro do p pro lado esquerdo */
     text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.322); /*  sombras */
-    margin-bottom: 30px;
+    padding-bottom: 30px;
 
 }
 
